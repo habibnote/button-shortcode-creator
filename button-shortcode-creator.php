@@ -53,7 +53,7 @@ final class BSC {
      * All hooks
      */
     private function hooks() {
-        
+        new App\Admin();
     }
 
     /**
