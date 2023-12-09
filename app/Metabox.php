@@ -34,8 +34,6 @@ class Metabox {
         $metabox = <<<EOD
         <div class="bsc_button_metaboxes">
             
-            <label>Hello</label>
-            <input type="text"/>
         </div>
 EOD;
         echo $metabox;
