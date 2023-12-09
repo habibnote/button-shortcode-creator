@@ -11,10 +11,10 @@ jQuery(document).ready(function ($) {
         let post_id = $(this).attr('post_id');
 
         //clone a btn
-        let clonedDiv = $(this).closest('.bsc-btn-meta.single-btn').clone();
+        let clonedDiv = $(this).closest('.single-btn').clone();
   
         // Append the cloned div after the original div
-        $(this).closest('.bsc-btn-meta.single-btn').after(clonedDiv);
+        $(this).closest('.single-btn').after(clonedDiv);
 
         $.ajax({
             type: 'POST',
@@ -32,8 +32,8 @@ jQuery(document).ready(function ($) {
       });
   
     //   Delete Button Click Event
-      $(document).on('click', '.delete-btn', function() {
+      $(document).on('click', '.bsc-delete', function() {
         // Remove the parent div
-        $(this).closest('.dynamic-div').remove();
+        $(this).closest('.single-btn').remove();
       });
 });

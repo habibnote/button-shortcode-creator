@@ -77,22 +77,22 @@ class Metabox {
                     <?php
                         for( $i = 0; $i < $number_of_btn; $i++ ){
                             ?>
-                            <div class="bsc-btn-meta single-btn">
+                            <div class="<?php printf( "bsc-btn-meta_%s", $i )?> single-btn">
                                 <div class="bsc-btn-text-field">
                                     <p>
                                         <label for="bsc_btn_text">Button Text:</label>
-                                        <input type="text" name="bsc_btn_text" id="bsc_btn_text" />
+                                        <input type="text" name="<?php printf( 'bsc_btn_text_%s', $i ) ?>" id="bsc_btn_text" />
                                     </p>
                                     <p>
                                         <label for="bsc_btn_url">Button Url:</label>
-                                        <input type="text" name="bsc_btn_url" id="bsc_btn_url" />
+                                        <input type="text" name="<?php printf( 'bsc_btn_url_%s', $i ) ?>" id="bsc_btn_url" />
                                     </p>
                                 </div>
                                 <div class="bsc-btn-color-field">
                                     
                                 </div>
                                 <div class="btn-right-area">
-                                    <p class="bsc-delete"><span class="dashicons dashicons-trash"></span></p>
+                                    <p class="bsc-delete" post_id="<?php echo $post_id; ?>"><span class="dashicons dashicons-trash"></span></p>
                                     <p class="bsc-add-new" post_id="<?php echo $post_id; ?>"><span class="dashicons dashicons-plus-alt"></span></p>
                                 </div>
                             </div>

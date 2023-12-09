@@ -1,11 +1,8 @@
-.bsc-btn-meta{
-    display: flex;
-    justify-content: space-between;
-}
 .single-btn{
     border: 1px solid #ddd;
     padding: 10px;
-    
+    display: flex;
+    justify-content: space-between;
 }
 .btn-right-area{
     display: flex;
