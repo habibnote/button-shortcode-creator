@@ -33,10 +33,18 @@ class Metabox {
     public function bsc_post_meta() {
         $metabox = <<<EOD
         <div class="bsc_button_metaboxes">
-            
+            <div class="bsc-left-area">
+                <h4>Upload Image</h4>
+
+            </div>
+            <div class="right-area">
+                
+            </div>
         </div>
 EOD;
         echo $metabox;
     }   
     
 }
+?>
+
