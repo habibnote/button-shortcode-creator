@@ -1,8 +1,8 @@
 <?php 
 /*
  * Plugin Name:       Button Shortcode Creator
- * Plugin URI:        https://github.com/habibnote/political-corruption
- * Description:       
+ * Plugin URI:        https://github.com/habibnote/button-shortcode-creator
+ * Description:       This plugin for button cretor with shortcode
  * Version:           0.0.1
  * Requires at least: 5.2
  * Requires PHP:      7.2
@@ -21,7 +21,14 @@ if( ! defined( 'ABSPATH' ) ) {
 final class BSC {
     static $instance = false;
 
-     /**
+    /**
+     * class constructor
+     */
+    private function __construct() {
+        
+    }
+
+    /**
      * Singleton Instance
     */
     static function get_bsc_plugin() {
