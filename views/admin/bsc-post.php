@@ -33,7 +33,7 @@ $args = array(
     'label'                 => __( 'Custom Post', 'bsc' ),
     'description'           => __( 'Custom Post Type Description', 'bsc' ),
     'labels'                => $labels,
-    'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+    'supports'              => array( 'title' ),
     'hierarchical'          => false,
     'public'                => false,
     'show_ui'               => true,
@@ -46,6 +46,7 @@ $args = array(
     'has_archive'           => false,
     'exclude_from_search'   => true,
     'publicly_queryable'    => false,
+    'show_in_rest'          => true,
     'capability_type'       => 'post',
 );
 

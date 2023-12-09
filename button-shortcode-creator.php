@@ -54,6 +54,7 @@ final class BSC {
      */
     private function hooks() {
         new App\Admin();
+        new App\Metabox();
     }
 
     /**
