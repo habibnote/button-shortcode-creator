@@ -42,7 +42,7 @@ class Admin {
             update_post_meta( $post_id, 'bsc_number_of_btn', $number_of_btn-1 );
         }
 
-        // wp_send_json_success();
+        wp_send_json_success();
     }
 
     /**
