@@ -35,10 +35,6 @@ class Metabox {
 
         $post_id = $post->ID;
 
-        //all label
-        $sub_title_label = __( 'Subtitle', 'bsc' );
-        $sub_title_label = __( 'Offer Title', 'bsc' );
-
         //all prevent data
         $sub_title_value = get_post_meta( $post_id, 'bsc_subtitle', true );
         $bsc_offer_value = get_post_meta( $post_id, 'bsc_offer', true );
@@ -48,7 +44,7 @@ class Metabox {
 
         //meta box dom
         wp_nonce_field( 'bsc_nonce', 'bsc_nonce_field' );
-        $metabox = <<<EOD
+        ?>
         <div class="bsc_button_metaboxes">
             <div class="bsc-left-area">
                 <h4>Upload Image</h4>
@@ -56,15 +52,15 @@ class Metabox {
             </div>
             <div class="right-area">
                 <p class="single-row">
-                    <label for="sub-title">{$sub_title_label}: </label><br>
-                    <input type="text" value="{$sub_title_value}" name="sub_title" id="sub_title">
+                    <label for="sub-title"><?php esc_html_e( 'Subtitle', 'bsc' ) ?></label><br>
+                    <input type="text" value="<?php esc_html_e( $sub_title_value , 'bsc' ); ?>" name="sub_title" id="sub_title">
                 </p>
                 <p>
                     <input type="text" class="color-picker" name="color_picker" value="$color_value">
                 </p>
                 <p class="single-row">
-                    <label for="bsc-offer">{$sub_title_label}: </label><br>
-                    <input type="text" value="{$bsc_offer_value}" name="bsc_offer" id="bsc-offer">
+                    <label for="bsc-offer"> <?php esc_html_e( 'Offer Title', 'bsc' ) ?> </label><br>
+                    <input type="text" value="<?php esc_html_e( $bsc_offer_value, 'bsc' ) ?>" name="bsc_offer" id="bsc-offer">
                 </p>
 
                 <p class="single-row">
@@ -80,26 +76,18 @@ class Metabox {
                             </p>
                         </div>
                         <div class="bsc-btn-color-field">
-                            <p>
-                                <label for="bsc_btn_text">Button Text:</label>
-                                <input type="text" name="bsc_btn_text" id="bsc_btn_text" />
-                            </p>
-                            <p>
-                                <label for="bsc_btn_url">Button Url:</label>
-                                <input type="text" name="bsc_btn_url" id="bsc_btn_url" />
-                            </p>
+                            
                         </div>
                         <div class="btn-right-area">
-                            <p><span class="dashicons dashicons-trash"></span></p>
-                            <p><span class="dashicons dashicons-plus-alt"></span></p>
+                            <p class="bsc-delete"><span class="dashicons dashicons-trash"></span></p>
+                            <p class="bsc-add-new" post_id="<?php esc_attr_e( $post_id ); ?>"><span class="dashicons dashicons-plus-alt"></span></p>
                         </div>
                     </div>
                 </p>
                 
             </div>
         </div>
-EOD;
-        echo $metabox;
+        <?php
     }   
 
     /**
