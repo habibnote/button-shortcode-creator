@@ -29,9 +29,7 @@ class Admin {
             
             // delete_post_meta( $post_id,  );
         }
-
         
-
         wp_send_json_success( [
             $post_id,
             $nonce,

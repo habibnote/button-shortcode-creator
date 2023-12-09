@@ -115,6 +115,7 @@ class Metabox {
         $sub_title       = $_POST['sub_title'] ?? '';
         $bsc_offer       = $_POST['bsc_offer'] ?? '';
 
+
         if( ! bsc_is_secured( $bsc_nonce_value, 'bsc_nonce', $post_id ) ) {
             return $post_id;
         }   
@@ -122,6 +123,17 @@ class Metabox {
         if( in_array( '', [ $sub_title, $bsc_offer ] ) ) {
             return $post_id;
         }
+
+        $number_of_btn   = get_post_meta( $post_id, 'bsc_number_of_btn', true );
+
+        for( $i = 0; $i < $number_of_btn; $i++ ) {
+
+            $bsc_btn_text = $_POST['bsc_btn_text_'.$i];
+            $bsc_btn_url  = $_POST['bsc_btn_url_'.$i];
+
+            update_post_meta( $post_id, 'bsc_btn_text_'.$i, $bsc_btn_text );
+            update_post_meta( $post_id, 'bsc_btn_url_'.$i,  $bsc_btn_url );
+        } 
 
         update_post_meta( $post_id, 'bsc_subtitle', $sub_title );
         update_post_meta( $post_id, 'bsc_offer', $bsc_offer );
