@@ -25,6 +25,32 @@ final class BSC {
      * class constructor
      */
     private function __construct() {
+        $this->include();
+        $this->define();
+        $this->hooks();
+    }
+
+    /**
+     * Include all needed files
+     */
+    private function include() {
+        require_once( dirname( __FILE__ ) . '/inc/functions.php' );
+        require_once( dirname( __FILE__ ) . '/vendor/autoload.php' );
+    }
+
+    /**
+     * define all constant
+     */
+    private function define() {
+        define( 'BSC', __FILE__ );
+        define( 'BSC_DIR', dirname( BSC ) );
+        define( 'BSC_ASSET', plugins_url( 'assets', BSC ) );
+    }
+
+    /**
+     * All hooks
+     */
+    private function hooks() {
         
     }
 
