@@ -28,6 +28,6 @@ class Admin {
    public function admin_enqueue_scripts() {
         wp_enqueue_style( 'admin', BSC_ASSET . '/admin/css/admin.css', '', time(), 'all' );
 
-        wp_enqueue_script( 'admin', BSC_ASSET . '/admin/js/admin.js', ['jquery'], time(), true );
+        wp_enqueue_script( 'admin', BSC_ASSET . '/admin/js/admin.js', ['jquery', 'wp-color-picker'], time(), true );
    }   
 }
