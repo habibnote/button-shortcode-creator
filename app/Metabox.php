@@ -67,9 +67,8 @@ EOD;
         $bsc_nonce_field = $_POST['bsc_nonce_field'] ?? '';
         $sub_title       = $_POST['sub_title'] ?? '';
 
-        if( ! wp_verify_nonce( $bsc_nonce_field, 'bsc_nonce' ) ) {
-            return $post_id;
-        }
+        
+
         if( in_array( '', [ $sub_title ] ) ) {
             return $post_id;
         }
