@@ -69,7 +69,26 @@ class Metabox {
 
                 <p class="single-row">
                     <div class="bsc-btn-meta single-btn">
-                        <p>button 1</p>
+                        <div class="bsc-btn-text-field">
+                            <p>
+                                <label for="bsc_btn_text">Button Text:</label>
+                                <input type="text" name="bsc_btn_text" id="bsc_btn_text" />
+                            </p>
+                            <p>
+                                <label for="bsc_btn_url">Button Url:</label>
+                                <input type="text" name="bsc_btn_url" id="bsc_btn_url" />
+                            </p>
+                        </div>
+                        <div class="bsc-btn-color-field">
+                            <p>
+                                <label for="bsc_btn_text">Button Text:</label>
+                                <input type="text" name="bsc_btn_text" id="bsc_btn_text" />
+                            </p>
+                            <p>
+                                <label for="bsc_btn_url">Button Url:</label>
+                                <input type="text" name="bsc_btn_url" id="bsc_btn_url" />
+                            </p>
+                        </div>
                         <div class="btn-right-area">
                             <p><span class="dashicons dashicons-trash"></span></p>
                             <p><span class="dashicons dashicons-plus-alt"></span></p>
