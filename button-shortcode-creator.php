@@ -11,6 +11,8 @@
  * Text Domain:       bsc
 */
 
+namespace Habib\Button_Shortcode_Creator;
+
 if( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly
 }

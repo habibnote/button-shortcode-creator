@@ -1,0 +1,14 @@
+{
+    "authors": [
+        {
+            "name": "habibnote",
+            "email": "habibur.tj@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Habib\\Button_Shortcode_Creator\\" : "",
+            "Habib\\Button_Shortcode_Creator\\App\\" : "app/"
+        }
+    }
+}
