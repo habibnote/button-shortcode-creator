@@ -74,17 +74,19 @@ class Metabox {
 
                 <p class="single-row">
                     <?php
+                        $bsc_btn_text = get_post_meta( $post_id, 'bsc_btn_text', true );
+                        $bsc_btn_url   = get_post_meta( $post_id, 'bsc_btn_url', true );
                         for( $i = 0; $i < $number_of_btn; $i++ ){
                             ?>
                             <div class="<?php printf( "bsc-btn-meta_%s", $i )?> single-btn">
                                 <div class="bsc-btn-text-field">
                                     <p>
-                                        <label for="bsc_btn_text">Button Text:</label>
-                                        <input type="text" name="bsc_btn_text[]" id="bsc_btn_text" />
+                                        <label>Button Text:</label>
+                                        <input type="text" name="bsc_btn_text[]" value="<?php echo $bsc_btn_text[$i] ?? ''; ?>" />
                                     </p>
                                     <p>
-                                        <label for="bsc_btn_url">Button Url:</label>
-                                        <input type="text" name="bsc_btn_url[]" id="bsc_btn_url" />
+                                        <label>Button Url:</label>
+                                        <input type="text" name="bsc_btn_url[]" value="<?php echo $bsc_btn_url[$i] ?? ''; ?>" />
                                     </p>
                                 </div>
                                 <div class="bsc-btn-color-field">
@@ -114,6 +116,12 @@ class Metabox {
         $sub_title       = $_POST['sub_title'] ?? '';
         $bsc_offer       = $_POST['bsc_offer'] ?? '';
 
+        $bsc_btn_text  = $_POST['bsc_btn_text'] ?? '';
+        $bsc_btn_url   = $_POST['bsc_btn_url'] ?? '';
+
+        // update_option( 'habib_test', $bsc_btn_text );
+        update_post_meta( $post_id, 'bsc_btn_text', $bsc_btn_text );
+        update_post_meta( $post_id, 'bsc_btn_url', $bsc_btn_url );
 
         if( ! bsc_is_secured( $bsc_nonce_value, 'bsc_nonce', $post_id ) ) {
             return $post_id;
