@@ -46,6 +46,7 @@ class Metabox {
         $post_id = $post->ID;
 
         //all prevent data
+        $number_of_btn   = get_post_meta( $post_id, 'bsc_number_of_btn', true );
         $sub_title_value = get_post_meta( $post_id, 'bsc_subtitle', true );
         $bsc_offer_value = get_post_meta( $post_id, 'bsc_offer', true );
 
@@ -61,9 +62,6 @@ class Metabox {
 
             </div>
             <div class="right-area">
-                <?php
-                    echo get_post_meta( $post_id, 'bsc_number_of_btn', true );
-                ?>
                 <p class="single-row">
                     <label for="sub-title"><?php esc_html_e( 'Subtitle', 'bsc' ) ?></label><br>
                     <input type="text" value="<?php esc_html_e( $sub_title_value , 'bsc' ); ?>" name="sub_title" id="sub_title">
@@ -77,25 +75,32 @@ class Metabox {
                 </p>
 
                 <p class="single-row">
-                    <div class="bsc-btn-meta single-btn">
-                        <div class="bsc-btn-text-field">
-                            <p>
-                                <label for="bsc_btn_text">Button Text:</label>
-                                <input type="text" name="bsc_btn_text" id="bsc_btn_text" />
-                            </p>
-                            <p>
-                                <label for="bsc_btn_url">Button Url:</label>
-                                <input type="text" name="bsc_btn_url" id="bsc_btn_url" />
-                            </p>
-                        </div>
-                        <div class="bsc-btn-color-field">
-                            
-                        </div>
-                        <div class="btn-right-area">
-                            <p class="bsc-delete"><span class="dashicons dashicons-trash"></span></p>
-                            <p class="bsc-add-new" post_id="<?php esc_attr_e( $post_id ); ?>"><span class="dashicons dashicons-plus-alt"></span></p>
-                        </div>
-                    </div>
+                    <?php
+                        for( $i = 0; $i < $number_of_btn; $i++ ){
+                            ?>
+                            <div class="bsc-btn-meta single-btn">
+                                <div class="bsc-btn-text-field">
+                                    <p>
+                                        <label for="bsc_btn_text">Button Text:</label>
+                                        <input type="text" name="bsc_btn_text" id="bsc_btn_text" />
+                                    </p>
+                                    <p>
+                                        <label for="bsc_btn_url">Button Url:</label>
+                                        <input type="text" name="bsc_btn_url" id="bsc_btn_url" />
+                                    </p>
+                                </div>
+                                <div class="bsc-btn-color-field">
+                                    
+                                </div>
+                                <div class="btn-right-area">
+                                    <p class="bsc-delete"><span class="dashicons dashicons-trash"></span></p>
+                                    <p class="bsc-add-new" post_id="<?php esc_attr_e( $post_id ); ?>"><span class="dashicons dashicons-plus-alt"></span></p>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    ?>
+                    
                 </p>
                 
             </div>
