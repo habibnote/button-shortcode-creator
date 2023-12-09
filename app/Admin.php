@@ -25,6 +25,13 @@ class Admin {
         $nonce   = $_POST['nonce'];
         $item_no = $_POST['item_no'];
 
+        if( wp_verify_nonce( $nonce, 'bsc_nonce_admin' ) ) {
+            
+            // delete_post_meta( $post_id,  );
+        }
+
+        
+
         wp_send_json_success( [
             $post_id,
             $nonce,
