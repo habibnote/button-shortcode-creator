@@ -66,6 +66,17 @@ class Metabox {
                     <label for="bsc-offer">{$sub_title_label}: </label><br>
                     <input type="text" value="{$bsc_offer_value}" name="bsc_offer" id="bsc-offer">
                 </p>
+
+                <p class="single-row">
+                    <div class="bsc-btn-meta single-btn">
+                        <p>button 1</p>
+                        <div class="btn-right-area">
+                            <p><span class="dashicons dashicons-trash"></span></p>
+                            <p><span class="dashicons dashicons-plus-alt"></span></p>
+                        </div>
+                    </div>
+                </p>
+                
             </div>
         </div>
 EOD;
@@ -93,3 +104,4 @@ EOD;
     }
 }
 ?>
+

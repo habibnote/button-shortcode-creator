@@ -1,3 +1,19 @@
-/* .wp-color-result-text {
-    display: none;
-} */
+.bsc-btn-meta{
+    display: flex;
+    justify-content: space-between;
+}
+.single-btn{
+    border: 1px solid #ddd;
+    padding: 10px;
+    
+}
+.btn-right-area{
+    display: flex;
+}
+.dashicons-trash{
+    color:red;
+}
+.dashicons-plus-alt{
+    color:green;
+    cursor:copy;
+}
