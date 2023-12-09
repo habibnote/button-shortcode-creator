@@ -76,9 +76,10 @@ class Metabox {
                     <?php
                         $bsc_btn_text = get_post_meta( $post_id, 'bsc_btn_text', true );
                         $bsc_btn_url   = get_post_meta( $post_id, 'bsc_btn_url', true );
+
                         for( $i = 0; $i < $number_of_btn; $i++ ){
                             ?>
-                            <div class="<?php printf( "bsc-btn-meta_%s", $i )?> single-btn">
+                            <div class="bsc-btn-meta single-btn">
                                 <div class="bsc-btn-text-field">
                                     <p>
                                         <label>Button Text:</label>
@@ -119,7 +120,6 @@ class Metabox {
         $bsc_btn_text  = $_POST['bsc_btn_text'] ?? '';
         $bsc_btn_url   = $_POST['bsc_btn_url'] ?? '';
 
-        // update_option( 'habib_test', $bsc_btn_text );
         update_post_meta( $post_id, 'bsc_btn_text', $bsc_btn_text );
         update_post_meta( $post_id, 'bsc_btn_url', $bsc_btn_url );
 
