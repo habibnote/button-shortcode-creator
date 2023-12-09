@@ -35,5 +35,24 @@ jQuery(document).ready(function ($) {
       $(document).on('click', '.bsc-delete', function() {
         // Remove the parent div
         $(this).closest('.single-btn').remove();
+
+        let post_id = $(this).attr('post_id');
+        let item_no = $(this).attr('item');
+
+        $.ajax({
+          type: 'POST',
+          url: BSC.ajax,
+          data: {
+              action: 'bsc_remove_button',
+              nonce: BSC.admin_nonce,
+              post_id: post_id,
+              item_no: item_no,
+          },
+          success: function(response) {
+              console.log( response );
+          }
       });
+        
+      });
+
 });

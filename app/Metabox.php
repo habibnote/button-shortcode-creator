@@ -92,7 +92,7 @@ class Metabox {
                                     
                                 </div>
                                 <div class="btn-right-area">
-                                    <p class="bsc-delete" post_id="<?php echo $post_id; ?>"><span class="dashicons dashicons-trash"></span></p>
+                                    <p class="bsc-delete" item="<?php echo $i; ?>" post_id="<?php echo $post_id; ?>"><span class="dashicons dashicons-trash"></span></p>
                                     <p class="bsc-add-new" post_id="<?php echo $post_id; ?>"><span class="dashicons dashicons-plus-alt"></span></p>
                                 </div>
                             </div>

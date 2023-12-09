@@ -14,10 +14,26 @@ class Admin {
         add_action( 'init', [$this, 'register_post_type'] );
         add_action( 'admin_enqueue_scripts', [$this, 'admin_enqueue_scripts'] );
         add_action( 'wp_ajax_bsc_add_button', [$this, 'bsc_add_button'] );
+        add_action( 'wp_ajax_bsc_remove_button', [$this, 'bsc_remove_button'] );
     }
 
     /**
-     * Process ajax requrest
+     * Process remove button ajax request
+     */
+    public function bsc_remove_button() {
+        $post_id = $_POST['post_id'];
+        $nonce   = $_POST['nonce'];
+        $item_no = $_POST['item_no'];
+
+        wp_send_json_success( [
+            $post_id,
+            $nonce,
+            $item_no
+        ] );
+    }
+
+    /**
+     * Process add button ajax requrest
      */
     public function bsc_add_button() {
         $post_id = $_POST['post_id'];
