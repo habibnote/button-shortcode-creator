@@ -11,8 +11,18 @@ class Metabox {
      * class constructor
      */
     public function __construct() {
+        add_filter( 'default_content', [$this, 'bsc_setdefault_btn_quantity'], 10, 2 );
         add_action( 'add_meta_boxes', [$this, 'bsc_metaboxes'] );
         add_action( 'save_post', [$this, 'bsc_save_meta_info'] );
+    }
+
+    /**
+     * Set Inital button quontity
+     */
+    public function bsc_setdefault_btn_quantity( $content, $post ) {
+        if ($post->post_type === 'bs_creator' && $post->post_status === 'auto-draft') {
+            update_post_meta( $post->ID, 'bsc_number_of_btn', 1 );
+        }
     }
 
     /**
@@ -51,6 +61,9 @@ class Metabox {
 
             </div>
             <div class="right-area">
+                <?php
+                    echo get_post_meta( $post_id, 'bsc_number_of_btn', true );
+                ?>
                 <p class="single-row">
                     <label for="sub-title"><?php esc_html_e( 'Subtitle', 'bsc' ) ?></label><br>
                     <input type="text" value="<?php esc_html_e( $sub_title_value , 'bsc' ); ?>" name="sub_title" id="sub_title">
