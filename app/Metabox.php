@@ -64,10 +64,12 @@ EOD;
      * Saved button meta info
      */
     public function bsc_save_meta_info( $post_id ) {
-        $bsc_nonce_field = $_POST['bsc_nonce_field'] ?? '';
+        $bsc_nonce_value = $_POST['bsc_nonce_field'] ?? '';
         $sub_title       = $_POST['sub_title'] ?? '';
 
-        
+        if( ! bsc_is_secured( $bsc_nonce_value, 'bsc_nonce', $post_id ) ) {
+            return $post_id;
+        }
 
         if( in_array( '', [ $sub_title ] ) ) {
             return $post_id;
