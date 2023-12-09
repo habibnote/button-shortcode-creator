@@ -50,7 +50,6 @@ class Metabox {
         $sub_title_value = get_post_meta( $post_id, 'bsc_subtitle', true );
         $bsc_offer_value = get_post_meta( $post_id, 'bsc_offer', true );
 
-
         $color_value = get_post_meta( $post_id, 'color_picker', true );
 
         //meta box dom
