@@ -81,11 +81,11 @@ class Metabox {
                                 <div class="bsc-btn-text-field">
                                     <p>
                                         <label for="bsc_btn_text">Button Text:</label>
-                                        <input type="text" name="<?php printf( 'bsc_btn_text_%s', $i ) ?>" id="bsc_btn_text" />
+                                        <input type="text" name="<?php printf( 'bsc_btn_text_%s', $i ) ?>" value="<?php echo get_post_meta( $post_id, 'bsc_btn_text_'.$i, true )?>" id="bsc_btn_text" />
                                     </p>
                                     <p>
                                         <label for="bsc_btn_url">Button Url:</label>
-                                        <input type="text" name="<?php printf( 'bsc_btn_url_%s', $i ) ?>" id="bsc_btn_url" />
+                                        <input type="text" name="<?php printf( 'bsc_btn_url_%s', $i ) ?>"  value="<?php echo get_post_meta( $post_id, 'bsc_btn_url_'.$i, true )?>" id="bsc_btn_url" />
                                     </p>
                                 </div>
                                 <div class="bsc-btn-color-field">
@@ -133,7 +133,7 @@ class Metabox {
 
             update_post_meta( $post_id, 'bsc_btn_text_'.$i, $bsc_btn_text );
             update_post_meta( $post_id, 'bsc_btn_url_'.$i,  $bsc_btn_url );
-        } 
+        }
 
         update_post_meta( $post_id, 'bsc_subtitle', $sub_title );
         update_post_meta( $post_id, 'bsc_offer', $bsc_offer );
