@@ -21,10 +21,22 @@ class Admin {
      */
     public function bsc_add_button() {
         $post_id = $_POST['post_id'];
-        
-        echo $post_id;
+        $nonce   = $_POST['nonce'];
 
-        die;
+        if( wp_verify_nonce( $nonce, 'bsc_nonce_admin' ) ) {
+            $current_btn_count = get_post_meta( $post_id, 'bsc_number_of_btn', true );
+
+            $update_value = $current_btn_count + 1;
+
+            update_post_meta( $post_id, 'bsc_number_of_btn', $update_value );
+            
+            wp_send_json_success([
+                'update' =>  $update_value,
+                'meta'   =>  get_post_meta( $post_id, 'bsc_number_of_btn', true ),
+            ]);
+            die();
+        }
+        
     }
 
     /**

@@ -59,7 +59,6 @@ class Metabox {
         <div class="bsc_button_metaboxes">
             <div class="bsc-left-area">
                 <h4>Upload Image</h4>
-
             </div>
             <div class="right-area">
                 <p class="single-row">
@@ -94,7 +93,7 @@ class Metabox {
                                 </div>
                                 <div class="btn-right-area">
                                     <p class="bsc-delete"><span class="dashicons dashicons-trash"></span></p>
-                                    <p class="bsc-add-new" post_id="<?php esc_attr_e( $post_id ); ?>"><span class="dashicons dashicons-plus-alt"></span></p>
+                                    <p class="bsc-add-new" post_id="<?php echo $post_id; ?>"><span class="dashicons dashicons-plus-alt"></span></p>
                                 </div>
                             </div>
                             <?php
