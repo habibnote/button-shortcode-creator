@@ -56,9 +56,6 @@ class Metabox {
         wp_nonce_field( 'bsc_nonce', 'bsc_nonce_field' );
         ?>
         <div class="bsc_button_metaboxes">
-            <div class="bsc-left-area">
-                <h4>Upload Image</h4>
-            </div>
             <div class="right-area">
                 <p class="single-row">  
                     <label for="sub-title"><?php esc_html_e( 'Subtitle', 'bsc' ) ?></label><br>
