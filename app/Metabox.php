@@ -175,7 +175,7 @@ class Metabox {
                                                 <?php 
                                                     $bsc_btn_font_weights = ['normal', 'bold']; 
                                                     foreach( $bsc_btn_font_weights as $weight ) {
-                                                        printf( "<option value='%s'>%s</option>", $weight, $weight );
+                                                        printf( "<option value='%s' %s>%s</option>", $weight, bsc_is_selected( $bsc_btn_info['bsc_btn_font-weight'][$i], $weight  ), $weight );
                                                     } 
                                                 ?>
                                             </select>

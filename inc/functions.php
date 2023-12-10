@@ -23,3 +23,14 @@ if( ! function_exists( 'bsc_is_secured' ) ) {
         return true;
     }
 }
+
+/**
+ * check for selected option
+ */
+if( ! function_exists( 'bsc_is_selected' ) ) {
+    function bsc_is_selected( $retrive_value, $current_value ) {
+        if( $retrive_value == $current_value ) {
+            return 'selected';
+        }
+    }
+}
