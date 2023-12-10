@@ -11,7 +11,22 @@ class Front {
      * Class constructor
      */
     public function __construct() {
+        add_shortcode( 'bsc_button', [$this, 'button_shortcode'] );
         add_action( 'wp_enqueue_scripts', [$this, 'enque_scripts'] );
+    }
+
+    /**
+     * Create shortcode
+     */
+    public function button_shortcode( $atts ) {
+        $post_id = $atts['id'];
+
+        // Get post object by post ID
+        $post = get_post($post_id);
+
+        if( $post ) {
+            echo $post->post_title;
+        }
     }
 
     /**
