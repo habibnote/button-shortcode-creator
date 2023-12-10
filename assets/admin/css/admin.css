@@ -14,3 +14,26 @@
     color:green;
     cursor:copy;
 }
+.left-area{
+    /* display: none; */
+    width: 90%;
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+}
+.bsc-btn-text-field{
+    border-bottom: 1px solid #ddd;
+}
+.bsc-btn-text-field p input{
+    width: 100%;
+}
+.bsc-btn-space-field,.bsc-btn-color-field{
+    padding:20px 0; 
+    display: flex;
+    justify-content: space-between;
+}
+.single-field{
+    width: 30%;
+}
+.single-field label{
+    display: block;
+}

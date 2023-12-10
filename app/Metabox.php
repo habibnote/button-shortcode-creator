@@ -80,23 +80,84 @@ class Metabox {
                         for( $i = 0; $i < $number_of_btn; $i++ ){
                             ?>
                             <div class="bsc-btn-meta single-btn">
-                                <div class="bsc-btn-text-field">
-                                    <p>
-                                        <label>Button Text:</label>
-                                        <input type="text" name="bsc_btn_text[]" value="<?php echo $bsc_btn_text[$i] ?? ''; ?>" />
-                                    </p>
-                                    <p>
-                                        <label>Button Url:</label>
-                                        <input type="text" name="bsc_btn_url[]" value="<?php echo $bsc_btn_url[$i] ?? ''; ?>" />
-                                    </p>
+                                <div class="left-area">
+                                    <div class="bsc-btn-text-field">
+                                        <p>
+                                            <label>Button Text:</label>
+                                            <input type="text" name="bsc_btn_text[]" value="<?php echo $bsc_btn_text[$i] ?? ''; ?>" />
+                                        </p>
+                                        <p>
+                                            <label>Button Url:</label>
+                                            <input type="text" name="bsc_btn_url[]" value="<?php echo $bsc_btn_url[$i] ?? ''; ?>" />
+                                        </p>
+                                    </div>
+                                    <div class="bsc-btn-space-field">
+                                        
+                                        <div class="single-field">
+                                            <label>Padding: <span>px</span></label>
+                                            <input type="number" name="bsc_btn_padding[]" value="" />
+                                        </div>
+                                        <div class="single-field">
+                                            <label>Margin: <span>px</span> </label>
+                                            <input type="number" name="bsc_btn_margin[]" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="bsc-btn-color-field">
+                                        <div class="single-field">
+                                            <label>Color: </label>
+                                            <input type="text" class="color-picker" name="bsc_btn_color[]">
+                                        </div>
+                                        <div class="single-field">
+                                            <label>Background: </label>
+                                            <input type="text" class="color-picker" name="bsc_btn_background[]">
+                                        </div>
+                                        <div class="single-field">
+                                            <label>Border-color: </label>
+                                            <input type="text" class="color-picker" name="bsc_btn_border-color[]">
+                                        </div>
+                                    </div>
+                                    <div class="bsc-btn-color-field">
+                                        <div class="single-field">
+                                            <label>Hover Color: </label>
+                                            <input type="text" name="bsc_btn_hover_color[]" value="" />
+                                        </div>
+                                        <div class="single-field">
+                                            <label>Hover Background: </label>
+                                            <input type="text" name="bsc_btn_hover_bg_color[]" value="" />
+                                        </div>
+                                        <div class="single-field">
+                                            <label>Border-color: </label>
+                                            <input type="text" name="bsc_btn_border_color[]" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="bsc-btn-color-field">
+                                        <div class="single-field">
+                                            <label>Font Size: <span>px</span> </label>
+                                            <input type="text" name="bsc_btn_font_size[]" value="" />
+                                        </div>
+                                        <div class="single-field">
+                                            <label>Font Weight: </label>
+                                            <select name="bsc_btn_font-weight[]">
+                                                <option value="normal">normal</option>
+                                                <option value="bold">bold</option>
+                                            </select>
+                                        </div>
+                                        <div class="single-field">
+                                            <label>Font Style: </label>
+                                            <select name="bsc_btn_font-style[]">
+                                                <option value="normal">normal</option>
+                                                <option value="italic">Italic</option>
+                                            </select>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="bsc-btn-color-field">
-                                    
+                                <div class="right-area">
+                                    <div class="btn-right-area">
+                                        <p class="bsc-delete" item="<?php echo $i; ?>" post_id="<?php echo $post_id; ?>"><span class="dashicons dashicons-trash"></span></p>
+                                        <p class="bsc-add-new" post_id="<?php echo $post_id; ?>"><span class="dashicons dashicons-plus-alt"></span></p>
+                                    </div>
                                 </div>
-                                <div class="btn-right-area">
-                                    <p class="bsc-delete" item="<?php echo $i; ?>" post_id="<?php echo $post_id; ?>"><span class="dashicons dashicons-trash"></span></p>
-                                    <p class="bsc-add-new" post_id="<?php echo $post_id; ?>"><span class="dashicons dashicons-plus-alt"></span></p>
-                                </div>
+                                
                             </div>
                             <?php
                         }
