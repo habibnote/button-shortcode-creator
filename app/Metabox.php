@@ -157,15 +157,15 @@ class Metabox {
                                     <div class="bsc-btn-color-field">
                                         <div class="single-field">
                                             <label>Hover Color: </label>
-                                            <input type="text" name="bsc_btn_hover_color[]" value="" />
+                                            <input type="text" class="color-picker" name="bsc_btn_hover_color[]">
                                         </div>
                                         <div class="single-field">
                                             <label>Hover Background: </label>
-                                            <input type="text" name="bsc_btn_hover_bg_color[]" value="" />
+                                            <input type="text" class="color-picker" name="bsc_btn_hover_bg_color[]">
                                         </div>
                                         <div class="single-field">
                                             <label>Border-color: </label>
-                                            <input type="text" name="bsc_btn_border_color[]" value="" />
+                                            <input type="text" class="color-picker" name="bsc_btn_border_color[]">
                                         </div>
                                     </div>
                                     <div class="bsc-btn-color-field">

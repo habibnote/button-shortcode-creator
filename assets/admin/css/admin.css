@@ -3,15 +3,20 @@
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    background-color: #f0efef;
 }
 .btn-right-area{
     display: flex;
+    align-items: center;
+    height: 100%;
 }
+
 .single-row input{
     width: 100%;
 }
 .dashicons-trash{
     color:red;
+    margin-right: 10px;
 }
 .dashicons-plus-alt{
     color:green;
