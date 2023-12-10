@@ -51,7 +51,9 @@ class Metabox {
      * Shortcode Metabox
      */
     public function bsc_shortcode( $post ) {
+        echo "<pre>";
         printf( "[bsc_button id=%s/]", $post->ID );
+        echo "</pre>";
     }
 
     /**
