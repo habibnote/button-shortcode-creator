@@ -1,8 +1,8 @@
 <?php 
 
 $labels = array(
-    'name'                  => _x( 'Button ShortCode Cretors', 'Post Type General Name', 'bsc' ),
-    'singular_name'         => _x( 'Button ShortCode Cretor', 'Post Type Singular Name', 'bsc' ),
+    'name'                  => _x( 'Button Lists', 'Post Type General Name', 'bsc' ),
+    'singular_name'         => _x( 'Button', 'Post Type Singular Name', 'bsc' ),
     'menu_name'             => __( 'BSC', 'bsc' ),
     'name_admin_bar'        => __( 'BSC', 'bsc' ),
     'archives'              => __( 'Item Archives', 'bsc' ),
