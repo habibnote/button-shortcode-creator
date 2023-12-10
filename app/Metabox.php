@@ -36,6 +36,22 @@ class Metabox {
             'bs_creator',
             'normal'
         );
+
+        add_meta_box(
+            'bsc_button_shortcode',
+            __( 'Button Shortcode', 'bsc' ),
+            [$this, 'bsc_shortcode'],
+            'bs_creator',
+            'side',
+
+        );
+    }
+
+    /**
+     * Shortcode Metabox
+     */
+    public function bsc_shortcode( $post ) {
+        printf( "[bsc_button id=%s/]", $post->ID );
     }
 
     /**
