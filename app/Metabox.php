@@ -92,8 +92,6 @@ class Metabox {
         $sub_title_value = get_post_meta( $post_id, 'bsc_subtitle', true );
         $bsc_offer_value = get_post_meta( $post_id, 'bsc_offer', true );
 
-        $color_value = get_post_meta( $post_id, 'color_picker', true );
-
         //meta box dom
         wp_nonce_field( 'bsc_nonce', 'bsc_nonce_field' );
         ?>
@@ -112,9 +110,10 @@ class Metabox {
 
                 <p class="single-row">
                     <?php
-                        $bsc_btn_text = get_post_meta( $post_id, 'bsc_btn_text', true );
-                        $bsc_btn_url   = get_post_meta( $post_id, 'bsc_btn_url', true );
-
+                        $bsc_btn_info   = get_post_meta( $post_id, 'bsc_btn_info', true );
+                        // echo "<pre>";
+                        // print_r( $bsc_btn_info );
+                        // echo "<pre>";
                         for( $i = 0; $i < $number_of_btn; $i++ ){
                             ?>
                             <div class="bsc-btn-meta single-btn">
@@ -122,60 +121,57 @@ class Metabox {
                                     <div class="bsc-btn-text-field">
                                         <p>
                                             <label>Button Text:</label>
-                                            <input type="text" name="bsc_btn_text[]" value="<?php echo $bsc_btn_text[$i] ?? ''; ?>" />
+                                            <input type="text" name="bsc_btn_text[]" value="<?php echo $bsc_btn_info['bsc_btn_text'][$i] ?? ''; ?>" />
                                         </p>
                                         <p>
                                             <label>Button Url:</label>
-                                            <input type="text" name="bsc_btn_url[]" value="<?php echo $bsc_btn_url[$i] ?? ''; ?>" />
+                                            <input type="text" name="bsc_btn_url[]" value="<?php echo $bsc_btn_info['bsc_btn_url'][$i] ?? ''; ?>" />
                                         </p>
                                     </div>
                                     <div class="bsc-btn-space-field">
                                         
                                         <div class="single-field">
                                             <label>Padding: <span>px</span></label>
-                                            <input type="number" name="bsc_btn_padding[]" value="" />
+                                            <input type="number" name="bsc_btn_padding[]" value="<?php echo $bsc_btn_info['bsc_btn_padding'][$i] ?? ''; ?>" />
                                         </div>
                                         <div class="single-field">
                                             <label>Margin: <span>px</span> </label>
-                                            <input type="number" name="bsc_btn_margin[]" value="" />
+                                            <input type="number" name="bsc_btn_margin[]" value="<?php echo $bsc_btn_info['bsc_btn_margin'][$i] ?? ''; ?>" />
                                         </div>
                                     </div>
                                     <div class="bsc-btn-color-field">
                                         <div class="single-field">
                                             <label>Color: </label>
-                                            <input type="text" class="color-picker" name="bsc_btn_color[]">
+                                            <input type="text" class="color-picker" name="bsc_btn_color[]" value="<?php echo $bsc_btn_info['bsc_btn_color'][$i] ?? ''; ?>">
                                         </div>
                                         <div class="single-field">
                                             <label>Background: </label>
-                                            <input type="text" class="color-picker" name="bsc_btn_background[]">
+                                            <input type="text" class="color-picker" name="bsc_btn_background[]" value="<?php echo $bsc_btn_info['bsc_btn_background'][$i] ?? ''; ?>">
                                         </div>
                                         <div class="single-field">
                                             <label>Border-color: </label>
-                                            <input type="text" class="color-picker" name="bsc_btn_border-color[]">
+                                            <input type="text" class="color-picker" name="bsc_btn_border-color[]" value="<?php echo $bsc_btn_info['bsc_btn_border-color'][$i] ?? ''; ?>">
                                         </div>
                                     </div>
                                     <div class="bsc-btn-color-field">
                                         <div class="single-field">
                                             <label>Hover Color: </label>
-                                            <input type="text" class="color-picker" name="bsc_btn_hover_color[]">
+                                            <input type="text" class="color-picker" name="bsc_btn_hover_color[]" value="<?php echo $bsc_btn_info['bsc_btn_hover_color'][$i] ?? ''; ?>">
                                         </div>
                                         <div class="single-field">
                                             <label>Hover Background: </label>
-                                            <input type="text" class="color-picker" name="bsc_btn_hover_bg_color[]">
-                                        </div>
-                                        <div class="single-field">
-                                            <label>Border-color: </label>
-                                            <input type="text" class="color-picker" name="bsc_btn_border_color[]">
+                                            <input type="text" class="color-picker" name="bsc_btn_hover_bg_color[]" value="<?php echo $bsc_btn_info['bsc_btn_hover_bg_color'][$i] ?? ''; ?>">
                                         </div>
                                     </div>
                                     <div class="bsc-btn-color-field">
                                         <div class="single-field">
                                             <label>Font Size: <span>px</span> </label>
-                                            <input type="text" name="bsc_btn_font_size[]" value="" />
+                                            <input type="text" name="bsc_btn_font_size[]" value="<?php echo $bsc_btn_info['bsc_btn_font_size'][$i] ?? ''; ?>" />
                                         </div>
                                         <div class="single-field">
                                             <label>Font Weight: </label>
                                             <select name="bsc_btn_font-weight[]">
+                                                
                                                 <option value="normal">normal</option>
                                                 <option value="bold">bold</option>
                                             </select>
@@ -216,11 +212,23 @@ class Metabox {
         $sub_title       = $_POST['sub_title'] ?? '';
         $bsc_offer       = $_POST['bsc_offer'] ?? '';
 
-        $bsc_btn_text  = $_POST['bsc_btn_text'] ?? '';
-        $bsc_btn_url   = $_POST['bsc_btn_url'] ?? '';
 
-        update_post_meta( $post_id, 'bsc_btn_text', $bsc_btn_text );
-        update_post_meta( $post_id, 'bsc_btn_url', $bsc_btn_url );
+        $bsc_btn_info    = [];
+        $bsc_btn_info['bsc_btn_text']           = $_POST['bsc_btn_text'] ?? '';
+        $bsc_btn_info['bsc_btn_url']            = $_POST['bsc_btn_url'] ?? '';
+        $bsc_btn_info['bsc_btn_padding']        = $_POST['bsc_btn_padding'] ?? '';
+        $bsc_btn_info['bsc_btn_margin']         = $_POST['bsc_btn_margin'] ?? '';
+        $bsc_btn_info['bsc_btn_color']          = $_POST['bsc_btn_color'] ?? '';
+        $bsc_btn_info['bsc_btn_background']     = $_POST['bsc_btn_background'] ?? '';
+        $bsc_btn_info['bsc_btn_border-color']   = $_POST['bsc_btn_border-color'] ?? '';
+        $bsc_btn_info['bsc_btn_hover_color']    = $_POST['bsc_btn_hover_color'] ?? '';
+        $bsc_btn_info['bsc_btn_hover_bg_color'] = $_POST['bsc_btn_hover_bg_color'] ?? '';
+        $bsc_btn_info['bsc_btn_font_size']      = $_POST['bsc_btn_font_size'] ?? '';
+        $bsc_btn_info['bsc_btn_font-weight']    = $_POST['bsc_btn_font-weight'] ?? '';
+        $bsc_btn_info['bsc_btn_font-style']     = $_POST['bsc_btn_font-style'] ?? '';
+        
+
+        update_post_meta( $post_id, 'bsc_btn_info', $bsc_btn_info );
 
         if( ! bsc_is_secured( $bsc_nonce_value, 'bsc_nonce', $post_id ) ) {
             return $post_id;
