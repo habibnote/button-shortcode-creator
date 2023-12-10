@@ -170,10 +170,14 @@ class Metabox {
                                         </div>
                                         <div class="single-field">
                                             <label>Font Weight: </label>
-                                            <select name="bsc_btn_font-weight[]">
-                                                
-                                                <option value="normal">normal</option>
-                                                <option value="bold">bold</option>
+                                            <select name="bsc_btn_font_weight[]">
+
+                                                <?php 
+                                                    $bsc_btn_font_weights = ['normal', 'bold']; 
+                                                    foreach( $bsc_btn_font_weights as $weight ) {
+                                                        printf( "<option value='%s'>%s</option>", $weight, $weight );
+                                                    } 
+                                                ?>
                                             </select>
                                         </div>
                                         <div class="single-field">
@@ -224,7 +228,7 @@ class Metabox {
         $bsc_btn_info['bsc_btn_hover_color']    = $_POST['bsc_btn_hover_color'] ?? '';
         $bsc_btn_info['bsc_btn_hover_bg_color'] = $_POST['bsc_btn_hover_bg_color'] ?? '';
         $bsc_btn_info['bsc_btn_font_size']      = $_POST['bsc_btn_font_size'] ?? '';
-        $bsc_btn_info['bsc_btn_font-weight']    = $_POST['bsc_btn_font-weight'] ?? '';
+        $bsc_btn_info['bsc_btn_font_weight']    = $_POST['bsc_btn_font_weight'] ?? '';
         $bsc_btn_info['bsc_btn_font-style']     = $_POST['bsc_btn_font-style'] ?? '';
         
 
