@@ -60,12 +60,11 @@ class Metabox {
                 <h4>Upload Image</h4>
             </div>
             <div class="right-area">
-                <p class="single-row">
+                <p class="single-row">  
                     <label for="sub-title"><?php esc_html_e( 'Subtitle', 'bsc' ) ?></label><br>
                     <input type="text" value="<?php esc_html_e( $sub_title_value , 'bsc' ); ?>" name="sub_title" id="sub_title">
                 </p>
                 <p>
-                    <input type="text" class="color-picker" name="color_picker" value="$color_value">
                 </p>
                 <p class="single-row">
                     <label for="bsc-offer"> <?php esc_html_e( 'Offer Title', 'bsc' ) ?> </label><br>

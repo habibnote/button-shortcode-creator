@@ -7,6 +7,9 @@
 .btn-right-area{
     display: flex;
 }
+.single-row input{
+    width: 100%;
+}
 .dashicons-trash{
     color:red;
 }
