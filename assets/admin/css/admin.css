@@ -40,3 +40,7 @@
 .single-field label{
     display: block;
 }
+.single-field label span{
+    font-style: italic;
+    color: #a2a1a1;
+}
