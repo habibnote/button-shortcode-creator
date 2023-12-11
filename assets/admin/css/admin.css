@@ -33,8 +33,16 @@
     justify-content: space-between;
     align-items: center;
 }
+.bsc-btn-text-field p{
+    width: 40%;
+}
+.bsc-btn-text-field p label{
+    font-weight: bold;
+}
 .bsc-btn-text-field p input{
     width: 100%;
+    padding: 3px;
+    border: 1px solid #ddd;
 }
 .bsc-btn-space-field,.bsc-btn-color-field{
     padding:20px 0; 
@@ -56,12 +64,16 @@
     border-top: 1px solid #ddd;
 }
 .bsc-btn-setting{
+    margin-top: 15px;
     display: inline-block;
-    padding: 15px 50px;
+    padding: 10px 55px;
     border:none;
     height: 20px;
     display: flex;
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
+    background-color: rgb(2, 131, 141);
+    color:#fff;
+    cursor: pointer;
 }
