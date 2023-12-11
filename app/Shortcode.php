@@ -53,15 +53,35 @@ class Shortcode {
                             }
 
                             if( $bsc_btn_info ) {
-                                // foreach( $bsc_btn_info as $bsc_btns ) {
-                                //     foreach( $bsc_btns as $info ) {
-                                        
-                                //     }
+                                $bsc_btn_count = count( $bsc_btn_info['bsc_btn_text'] );
+                                $bsc_btn_text = $bsc_btn_info['bsc_btn_text'];
+                                $bsc_btn_padding = $bsc_btn_info['bsc_btn_padding'];
+                                $bsc_btn_margin = $bsc_btn_info['bsc_btn_margin'];
+                                $bsc_btn_color = $bsc_btn_info['bsc_btn_color'];
+                                $bsc_btn_background = $bsc_btn_info['bsc_btn_background'];
+                                $bsc_btn_border_color = $bsc_btn_info['bsc_btn_border-color'];
+                                $bsc_btn_hover_bg_color = $bsc_btn_info['bsc_btn_hover_bg_color'];
+                                $bsc_btn_font_size = $bsc_btn_info['bsc_btn_font_size'];
+                                $bsc_btn_font_weight = $bsc_btn_info['bsc_btn_font_weight'];
+                                $bsc_btn_font_style = $bsc_btn_info['bsc_btn_font-style'];
+
+                                // echo md5('habib');
+                                
+
+                                for( $i = 0; $i < $bsc_btn_count; $i++ ) {
+                                    printf(
+                                        "",
+                                    );
+                                }
+                            //     foreach( $bsc_btn_info as $bsc_btns ) {
+                            //         foreach( $bsc_btns as $info ) {
+                                        // printf( "<a href='%s' >%s</a>", $info);
+                                    // }
                                     echo "<pre>";
                                     print_r( $bsc_btn_info );
                                     echo "</pre>";
-                                    printf( "<a href='%s' >%s</a>" );
-                                // }
+                                    
+                            //     }
                             }
                         ?>
                     </div>
