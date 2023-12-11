@@ -56,6 +56,7 @@ final class BSC {
         new App\Admin();
         new App\Front();
         new App\Metabox();
+        new App\Shortcode();
     }
 
     /**
