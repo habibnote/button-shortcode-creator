@@ -41,7 +41,7 @@ class MetaField {
                                     <label>Button Url:</label>
                                     <input type="text" name="bsc_btn_url[]" value="<?php echo $bsc_btn_info['bsc_btn_url'][$i] ?? ''; ?>" />
                                 </p>
-                                <div class="bsc-btn-setting" id="bsc-btn-setting">Settings <span class="dashicons dashicons-arrow-down-alt2"></span> </div>
+                                <div class="bsc-btn-setting" id="bsc-btn-setting"> Button Style <span class="dashicons dashicons-arrow-down-alt2"></span> </div>
                             </div>
                             <?php ( new self() )->btn_setting_meta_field( $bsc_btn_info, $i ); ?>
                         </div>

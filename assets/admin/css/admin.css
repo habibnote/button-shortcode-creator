@@ -10,9 +10,13 @@
     align-items: center;
     height: 100%;
 }
-
-.single-row input{
+.single-row label, .bsc-btn-text-field p label{
+    font-weight: bold;
+}
+.single-row input, .bsc-btn-text-field p input{
     width: 100%;
+    padding: 3px;
+    border: 1px solid #ddd;
 }
 .dashicons-trash{
     color:red;
@@ -36,14 +40,6 @@
 .bsc-btn-text-field p{
     width: 40%;
 }
-.bsc-btn-text-field p label{
-    font-weight: bold;
-}
-.bsc-btn-text-field p input{
-    width: 100%;
-    padding: 3px;
-    border: 1px solid #ddd;
-}
 .bsc-btn-space-field,.bsc-btn-color-field{
     padding:20px 0; 
     display: flex;
@@ -64,9 +60,9 @@
     border-top: 1px solid #ddd;
 }
 .bsc-btn-setting{
-    margin-top: 15px;
+    margin-top: 20px;
     display: inline-block;
-    padding: 10px 55px;
+    padding: 8px 55px;
     border:none;
     height: 20px;
     display: flex;
