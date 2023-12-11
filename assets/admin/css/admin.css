@@ -29,7 +29,9 @@
     padding-right: 20px;
 }
 .bsc-btn-text-field{
-    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .bsc-btn-text-field p input{
     width: 100%;
@@ -48,4 +50,18 @@
 .single-field label span{
     font-style: italic;
     color: #a2a1a1;
+}
+.bsc_setting_metafield{
+    display: none;
+    border-top: 1px solid #ddd;
+}
+.bsc-btn-setting{
+    display: inline-block;
+    padding: 15px 50px;
+    border:none;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
 }

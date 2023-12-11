@@ -53,6 +53,10 @@ jQuery(document).ready(function ($) {
           }
       });
         
-      });
+    });
+
+    $('.bsc-btn-setting').on('click', function(){
+        $(this).closest('.left-area').find('.bsc_setting_metafield').toggle();
+    });
 
 });
