@@ -21,8 +21,13 @@ class MetaField {
         ?>
         <p class="single-row">
             <?php
-                $number_of_btn   = get_post_meta( $post_id, 'bsc_number_of_btn', true );
-                $bsc_btn_info   = get_post_meta( $post_id, 'bsc_btn_info', true );
+                $number_of_btn      = get_post_meta( $post_id, 'bsc_number_of_btn', true );
+                $bsc_btn_info       = get_post_meta( $post_id, 'bsc_btn_info', true );
+
+                echo "<pre>";
+                print_r( $bsc_btn_info );
+                echo "</pre>";
+
                 for( $i = 0; $i < $number_of_btn; $i++ ){
                     ?>
                     <div class="bsc-btn-meta single-btn">
@@ -38,7 +43,7 @@ class MetaField {
                                 </p>
                                 <div class="bsc-btn-setting" id="bsc-btn-setting">Settings <span class="dashicons dashicons-arrow-down-alt2"></span> </div>
                             </div>
-                            <?php ( new self() )->btn_setting_meta_field( $bsc_btn_info ); ?>
+                            <?php ( new self() )->btn_setting_meta_field( $bsc_btn_info, $i ); ?>
                         </div>
                         <div class="right-area">
                             <div class="btn-right-area">
@@ -58,7 +63,7 @@ class MetaField {
     /**
      * setting metafield
      */
-    public function btn_setting_meta_field( $bsc_btn_info ) {
+    public function btn_setting_meta_field( $bsc_btn_info, $i ) {
         ?>
             <div class="bsc_setting_metafield">
 
