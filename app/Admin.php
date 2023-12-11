@@ -28,32 +28,21 @@ class Admin {
         if( wp_verify_nonce( $nonce, 'bsc_nonce_admin' ) ) {
             
             //get all meta
-            // $bsc_btn_text = get_post_meta( $post_id, 'bsc_btn_text', true );
-            // $bsc_btn_url  = get_post_meta( $post_id, 'bsc_btn_url', true );
             $bsc_btn_info = get_post_meta( $post_id, 'bsc_btn_info', true );
 
-            foreach( $bsc_btn_info as $btn_meta ) {
-                // array_shift( $bsc_btn_info[$btn_meta][$item_no] );
+            foreach( $bsc_btn_info as &$info ) {
+                unset( $info[$item_no] );
             }
 
-            // $bsc_btn_text = array_diff( $bsc_btn_text, [$bsc_btn_text[$item_no]] );
-            // $bsc_btn_url  = array_diff( $bsc_btn_url, [$bsc_btn_url[$item_no]] );
-
-            // update_post_meta( $post_id, 'bsc_btn_text', array_values( $bsc_btn_text ) );
-            // update_post_meta( $post_id, 'bsc_btn_url', array_values( $bsc_btn_url ) );
-
-
-            // foreach( $bsc_btn_info as $info ) {
-            //     echo( $bsc_btn_info[$info][$item_no] );
-            // }
+            update_post_meta( $post_id, 'bsc_btn_info', $bsc_btn_info );
 
             //update the btn quantity
-            // $number_of_btn   = get_post_meta( $post_id, 'bsc_number_of_btn', true );
-            // update_post_meta( $post_id, 'bsc_number_of_btn', $number_of_btn-1 );
+            $number_of_btn   = get_post_meta( $post_id, 'bsc_number_of_btn', true );
+            update_post_meta( $post_id, 'bsc_number_of_btn', $number_of_btn-1 );
         }
 
-        // wp_send_json_success( $bsc_btn_info );
-        print_r( $bsc_btn_info );
+        wp_send_json_success();
+        // print_r( $bsc_btn_info );
         die();
     }
 
