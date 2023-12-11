@@ -105,7 +105,7 @@ class MetaField {
                 <div class="bsc-btn-color-field">
                     <div class="single-field">
                         <label>Font Size: <span>px</span> </label>
-                        <input type="text" name="bsc_btn_font_size[]" value="<?php echo $bsc_btn_info['bsc_btn_font_size'][$i] ?? ''; ?>" />
+                        <input type="number" name="bsc_btn_font_size[]" value="<?php echo $bsc_btn_info['bsc_btn_font_size'][$i] ?? ''; ?>" />
                     </div>
                     <div class="single-field">
                         <label>Font Weight: </label>
@@ -113,7 +113,7 @@ class MetaField {
                             <?php 
                                 $bsc_btn_font_weights = ['normal', 'bold']; 
                                 foreach( $bsc_btn_font_weights as $weight ) {
-                                    printf( "<option value='%s' %s>%s</option>", $weight, bsc_is_selected( $bsc_btn_info['bsc_btn_font-weight'][$i], $weight  ), $weight );
+                                    printf( "<option value='%s' %s>%s</option>", $weight, bsc_is_selected( $bsc_btn_info['bsc_btn_font_weight'][$i], $weight  ), $weight );
                                 } 
                             ?>
                         </select>
@@ -121,9 +121,6 @@ class MetaField {
                     <div class="single-field">
                         <label>Font Style: </label>
                         <select name="bsc_btn_font-style[]">
-                            <option value="normal">normal</option>
-                            <option value="italic">Italic</option>
-
                             <?php 
                                 $bsc_btn_font_style = ['normal', 'italic']; 
                                 foreach( $bsc_btn_font_style as $style ) {
