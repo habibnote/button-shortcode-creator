@@ -34,6 +34,9 @@ class Admin {
                 unset( $info[$item_no] );
             }
 
+            //reindex array
+            $bsc_btn_info = array_map( 'array_values' , $bsc_btn_info );
+
             update_post_meta( $post_id, 'bsc_btn_info', $bsc_btn_info );
 
             //update the btn quantity
