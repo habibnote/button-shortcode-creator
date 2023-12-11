@@ -26,7 +26,22 @@ class Shortcode {
         $post = get_post($post_id);
 
         if( $post ) {
-            echo $post->post_title;
+
+            $post_id = $post->ID;
+            ?>
+                <div class="bsc-container">
+                    <div class="bsc-image">
+                        <?php
+                            if( has_post_thumbnail( $post_id ) ) {
+                                echo get_the_post_thumbnail( $post_id );
+                            }
+                        ?>
+                    </div>
+                    <div class="bsc-content">
+                        <h2><?php the_title(); ?></h2>
+                    </div>
+                </div>
+            <?php 
         }
     }
 }
