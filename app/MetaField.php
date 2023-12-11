@@ -24,10 +24,6 @@ class MetaField {
                 $number_of_btn      = get_post_meta( $post_id, 'bsc_number_of_btn', true );
                 $bsc_btn_info       = get_post_meta( $post_id, 'bsc_btn_info', true );
 
-                // echo "<pre>";
-                // print_r( $bsc_btn_info );
-                // echo "</pre>";
-
                 for( $i = 0; $i < $number_of_btn; $i++ ){
                     ?>
                     <div class="bsc-btn-meta single-btn">
