@@ -53,39 +53,53 @@ class Shortcode {
                             }
 
                             if( $bsc_btn_info ) {
-                                $bsc_btn_count = count( $bsc_btn_info['bsc_btn_text'] );
+                                $bsc_btn_count          = count( $bsc_btn_info['bsc_btn_text'] );
                                 
-                                $bsc_btn_text = $bsc_btn_info['bsc_btn_text'];
-                                $bsc_btn_url = $bsc_btn_info['bsc_btn_url'];
-                                $bsc_btn_padding = $bsc_btn_info['bsc_btn_padding'];
-                                $bsc_btn_margin = $bsc_btn_info['bsc_btn_margin'];
-                                $bsc_btn_color = $bsc_btn_info['bsc_btn_color'];
-                                $bsc_btn_background = $bsc_btn_info['bsc_btn_background'];
-                                $bsc_btn_border_color = $bsc_btn_info['bsc_btn_border-color'];
+                                $bsc_btn_text           = $bsc_btn_info['bsc_btn_text'];
+                                $bsc_btn_url            = $bsc_btn_info['bsc_btn_url'];
+                                $bsc_btn_padding        = $bsc_btn_info['bsc_btn_padding'];
+                                $bsc_btn_margin         = $bsc_btn_info['bsc_btn_margin'];
+                                $bsc_btn_color          = $bsc_btn_info['bsc_btn_color'];
+                                $bsc_btn_background     = $bsc_btn_info['bsc_btn_background'];
+                                $bsc_btn_border_color   = $bsc_btn_info['bsc_btn_border-color'];
                                 $bsc_btn_hover_bg_color = $bsc_btn_info['bsc_btn_hover_bg_color'];
-                                $bsc_btn_font_size = $bsc_btn_info['bsc_btn_font_size'];
-                                $bsc_btn_font_weight = $bsc_btn_info['bsc_btn_font_weight'];
-                                $bsc_btn_font_style = $bsc_btn_info['bsc_btn_font-style'];
+                                $bsc_btn_font_size      = $bsc_btn_info['bsc_btn_font_size'];
+                                $bsc_btn_font_weight    = $bsc_btn_info['bsc_btn_font_weight'];
+                                $bsc_btn_font_style     = $bsc_btn_info['bsc_btn_font-style'];
                                 
-                                echo "<div>";
+                                echo "<div class='bsc-btns'>";
 
                                 for( $i = 0; $i < $bsc_btn_count; $i++ ) {
                                     printf(
-                                        '<p><a 
-                                        style="margin:%3$spx; padding:%4$spx; color:%5$s; background-color:%6$s; border-color:%7$s; font-size:%8$spx; font-weight:%9$s; font-style:%10$s;"
-                                        href="%1$s">%2$s</a></p>',
+                                        '<button
+                                        class="bsc-btn" 
+                                        style="margin:%3$spx;border-color:%7$s;"
+                                        ><a
+                                        id="bsc-btn-a"
+                                        style="padding:%4$spx;color:%5$s;background-color:%6$s; font-size:%8$spx; font-weight:%9$s; font-style:%10$s;"
+                                        href="%1$s">%2$s</a></button><br>',
                                         esc_url( $bsc_btn_url[$i] ),
                                         esc_html( $bsc_btn_text[$i] , 'bsc' ),
-                                        
-                                        esc_html( $bsc_btn_padding[$i] ),
-                                        esc_html( $bsc_btn_margin[$i] ),
-                                        $bsc_btn_color[$i],
-                                        $bsc_btn_background[$i],
-                                        $bsc_btn_border_color[$i],
-                                        $bsc_btn_font_size[$i],
-                                        $bsc_btn_font_weight[$i],
-                                        $bsc_btn_font_style[$i]
+                
+                                        esc_attr( $bsc_btn_margin[$i] ),
+                                        esc_attr( $bsc_btn_padding[$i] ),
+                                        esc_attr( $bsc_btn_color[$i] ),
+                                        esc_attr( $bsc_btn_background[$i] ),
+                                        esc_attr( $bsc_btn_border_color[$i] ),
+                                        esc_attr( $bsc_btn_font_size[$i] ),
+                                        esc_attr( $bsc_btn_font_weight[$i] ),
+                                        esc_attr( $bsc_btn_font_style[$i] ),
                                     );
+
+                                    if(  )
+                                    printf(
+                                        "<style>
+                                            #bsc-btn-a:hover{
+                                                color:;
+                                            }
+                                        </style>"
+                                    );
+
                                 }
 
                                 echo "</div>";
