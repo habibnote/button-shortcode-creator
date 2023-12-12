@@ -62,6 +62,7 @@ class Shortcode {
                                 $bsc_btn_color          = $bsc_btn_info['bsc_btn_color'];
                                 $bsc_btn_background     = $bsc_btn_info['bsc_btn_background'];
                                 $bsc_btn_border_color   = $bsc_btn_info['bsc_btn_border-color'];
+                                $bsc_btn_hover_color    = $bsc_btn_info['bsc_btn_hover_color'];
                                 $bsc_btn_hover_bg_color = $bsc_btn_info['bsc_btn_hover_bg_color'];
                                 $bsc_btn_font_size      = $bsc_btn_info['bsc_btn_font_size'];
                                 $bsc_btn_font_weight    = $bsc_btn_info['bsc_btn_font_weight'];
@@ -91,14 +92,26 @@ class Shortcode {
                                         esc_attr( $bsc_btn_font_style[$i] ),
                                     );
 
-                                    if(  )
-                                    printf(
-                                        "<style>
-                                            #bsc-btn-a:hover{
-                                                color:;
-                                            }
-                                        </style>"
-                                    );
+                                    // if( $bsc_btn_hover_color[$i] ) {
+                                    //     printf(
+                                    //         "<style>
+                                    //             #bsc-btn-a:hover{
+                                    //                 color:%s;
+                                    //             }
+                                    //         </style>",
+                                    //         $bsc_btn_hover_color[$i]
+                                    //     );
+                                    // }
+                                    // if( $bsc_btn_hover_bg_color[$i] ) {
+                                    //     printf(
+                                    //         "<style>
+                                    //             #bsc-btn-a:hover{
+                                    //                 background-color:%s;
+                                    //             }
+                                    //         </style>",
+                                    //         $bsc_btn_hover_bg_color[$i]
+                                    //     );
+                                    // }
 
                                 }
 
