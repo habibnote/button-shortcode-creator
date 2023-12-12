@@ -56,6 +56,7 @@ class Shortcode {
                                 $bsc_btn_count = count( $bsc_btn_info['bsc_btn_text'] );
                                 
                                 $bsc_btn_text = $bsc_btn_info['bsc_btn_text'];
+                                $bsc_btn_url = $bsc_btn_info['bsc_btn_url'];
                                 $bsc_btn_padding = $bsc_btn_info['bsc_btn_padding'];
                                 $bsc_btn_margin = $bsc_btn_info['bsc_btn_margin'];
                                 $bsc_btn_color = $bsc_btn_info['bsc_btn_color'];
@@ -65,24 +66,33 @@ class Shortcode {
                                 $bsc_btn_font_size = $bsc_btn_info['bsc_btn_font_size'];
                                 $bsc_btn_font_weight = $bsc_btn_info['bsc_btn_font_weight'];
                                 $bsc_btn_font_style = $bsc_btn_info['bsc_btn_font-style'];
-
-                                // echo md5('habib');
                                 
+                                echo "<div>";
 
                                 for( $i = 0; $i < $bsc_btn_count; $i++ ) {
                                     printf(
-                                        "",
+                                        '<p><a 
+                                        style="margin:%3$spx; padding:%4$spx; color:%5$s; background-color:%6$s; border-color:%7$s; font-size:%8$spx; font-weight:%9$s; font-style:%10$s;"
+                                        href="%1$s">%2$s</a></p>',
+                                        esc_url( $bsc_btn_url[$i] ),
+                                        esc_html( $bsc_btn_text[$i] , 'bsc' ),
+                                        
+                                        esc_html( $bsc_btn_padding[$i] ),
+                                        esc_html( $bsc_btn_margin[$i] ),
+                                        $bsc_btn_color[$i],
+                                        $bsc_btn_background[$i],
+                                        $bsc_btn_border_color[$i],
+                                        $bsc_btn_font_size[$i],
+                                        $bsc_btn_font_weight[$i],
+                                        $bsc_btn_font_style[$i]
                                     );
                                 }
-                            //     foreach( $bsc_btn_info as $bsc_btns ) {
-                            //         foreach( $bsc_btns as $info ) {
-                                        // printf( "<a href='%s' >%s</a>", $info);
-                                    // }
-                                    echo "<pre>";
-                                    print_r( $bsc_btn_info );
-                                    echo "</pre>";
-                                    
-                            //     }
+
+                                echo "</div>";
+
+                                // echo "<pre>";
+                                // print_r( $bsc_btn_info );
+                                // echo "</pre>";
                             }
                         ?>
                     </div>
