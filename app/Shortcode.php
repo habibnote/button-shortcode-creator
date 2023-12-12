@@ -54,6 +54,7 @@ class Shortcode {
 
                             if( $bsc_btn_info ) {
                                 $bsc_btn_count = count( $bsc_btn_info['bsc_btn_text'] );
+                                
                                 $bsc_btn_text = $bsc_btn_info['bsc_btn_text'];
                                 $bsc_btn_padding = $bsc_btn_info['bsc_btn_padding'];
                                 $bsc_btn_margin = $bsc_btn_info['bsc_btn_margin'];
