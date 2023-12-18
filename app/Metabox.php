@@ -67,7 +67,6 @@ class Metabox {
             [$this, 'bsc_shortcode'],
             'bs_creator',
             'side',
-
         );
     }
 
@@ -152,5 +151,5 @@ class Metabox {
         update_post_meta( $post_id, 'bsc_offer', $bsc_offer );
     }
 }
-?>
+
 
