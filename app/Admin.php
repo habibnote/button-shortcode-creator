@@ -15,6 +15,29 @@ class Admin {
         add_action( 'admin_enqueue_scripts', [$this, 'admin_enqueue_scripts'] );
         add_action( 'wp_ajax_bsc_add_button', [$this, 'bsc_add_button'] );
         add_action( 'wp_ajax_bsc_remove_button', [$this, 'bsc_remove_button'] );
+
+        add_filter( 'post_row_actions', [$this, 'add_duplicate_link_before_trash'], 10, 2 );
+    }
+
+    /**
+     * duplicate link button
+     */
+    public function add_duplicate_link_before_trash( $actions, $post ) {
+        
+        if ( $post->post_type == 'bs_creator' ) {
+            // Save the 'trash' action
+            $trash = $actions['trash'];
+            
+            // Remove 'trash' action
+            unset($actions['trash']);
+            
+            // Add Duplicate link
+            $actions['duplicate'] = '<a href="' . esc_url(add_query_arg(array('post_id' => $post->ID), admin_url('admin-post.php?action=duplicate_post'))) . '">Duplicate</a>';
+            
+            // Add the 'trash' action back
+            $actions['trash'] = $trash;
+        }
+        return $actions;
     }
 
     /**
