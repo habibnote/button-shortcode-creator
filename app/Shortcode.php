@@ -75,7 +75,7 @@ class Shortcode {
                                         '<button
                                         class="bsc-btn" 
                                         style="margin:%3$spx;border-color:%7$s;"
-                                        ><a
+                                        ><a target="_blank"
                                         id="bsc-btn-a"
                                         style="padding:%4$spx;color:%5$s;background-color:%6$s; font-size:%8$spx; font-weight:%9$s; font-style:%10$s;"
                                         href="%1$s">%2$s</a></button><br>',
