@@ -44,7 +44,8 @@ class Metabox {
      * Set Inital button quontity
      */
     public function bsc_setdefault_btn_quantity( $content, $post ) {
-        if ($post->post_type === 'bs_creator' && $post->post_status === 'auto-draft') {
+
+        if ( $post->post_type === 'bs_creator' && $post->post_status === 'auto-draft' ) {
             update_post_meta( $post->ID, 'bsc_number_of_btn', 1 );
         }
     }
@@ -137,7 +138,7 @@ class Metabox {
         $bsc_btn_info['bsc_btn_font-style']     = $_POST['bsc_btn_font-style'] ?? '';
         
 
-        update_post_meta( $post_id, 'bsc_btn_info', $bsc_btn_info );
+        // update_post_meta( $post_id, 'bsc_btn_info', $bsc_btn_info );
 
         if( ! bsc_is_secured( $bsc_nonce_value, 'bsc_nonce', $post_id ) ) {
             return $post_id;
@@ -147,6 +148,7 @@ class Metabox {
             return $post_id;
         }
 
+        update_post_meta( $post_id, 'bsc_btn_info', $bsc_btn_info );
         update_post_meta( $post_id, 'bsc_subtitle', $sub_title );
         update_post_meta( $post_id, 'bsc_offer', $bsc_offer );
     }
