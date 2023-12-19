@@ -91,35 +91,9 @@ class Shortcode {
                                         esc_attr( $bsc_btn_font_weight[$i] ),
                                         esc_attr( $bsc_btn_font_style[$i] ),
                                     );
-
-                                    // if( $bsc_btn_hover_color[$i] ) {
-                                    //     printf(
-                                    //         "<style>
-                                    //             #bsc-btn-a:hover{
-                                    //                 color:%s;
-                                    //             }
-                                    //         </style>",
-                                    //         $bsc_btn_hover_color[$i]
-                                    //     );
-                                    // }
-                                    // if( $bsc_btn_hover_bg_color[$i] ) {
-                                    //     printf(
-                                    //         "<style>
-                                    //             #bsc-btn-a:hover{
-                                    //                 background-color:%s;
-                                    //             }
-                                    //         </style>",
-                                    //         $bsc_btn_hover_bg_color[$i]
-                                    //     );
-                                    // }
-
                                 }
 
                                 echo "</div>";
-
-                                // echo "<pre>";
-                                // print_r( $bsc_btn_info );
-                                // echo "</pre>";
                             }
                         ?>
                     </div>
