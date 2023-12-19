@@ -24,7 +24,7 @@
 }
 .dashicons-plus-alt{
     color:green;
-    cursor:copy;
+    cursor:default;
 }
 .left-area{
     /* display: none; */
