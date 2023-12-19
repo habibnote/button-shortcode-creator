@@ -37,7 +37,28 @@ class Admin {
     }
 
     public function setting_callback() {
-        echo "Hello";
+        ?>
+        <div class="wrap">
+            <h1>Settings</h1>
+            <hr>
+            <p>To use this plugin you need to acitve it first</p>
+            <div class="bsc-license_form">
+                <form>
+                    <p>
+                        <label for="bsc-ls-website">Website:</label>
+                        <input type="text"/>
+                    </p>
+                    <p>
+                        <label for="bsc-ls-website">License Key:</label>
+                        <input type="text"/>
+                    </p>
+                    <p>
+                        <button class="button button-primary">Active</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <?php
     }
 
     /**
