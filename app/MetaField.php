@@ -60,6 +60,7 @@ class MetaField {
      * setting metafield
      */
     public function btn_setting_meta_field( $bsc_btn_info, $i ) {
+        if( ! empty( $bsc_btn_info ) ) {
         ?>
             <div class="bsc_setting_metafield">
 
@@ -128,6 +129,76 @@ class MetaField {
                 </div>
             </div>
         <?php
+        }else{
+            ?>
 
+            <div class="bsc_setting_metafield">
+                <div class="bsc-btn-space-field">
+                    
+                    <div class="single-field">
+                        <label>Padding: <span>px</span></label>
+                        <input type="number" name="bsc_btn_padding[]" />
+                    </div>
+                    <div class="single-field">
+                        <label>Margin: <span>px</span> </label>
+                        <input type="number" name="bsc_btn_margin[]" />
+                    </div>
+                </div>
+                <div class="bsc-btn-color-field">
+                    <div class="single-field">
+                        <label>Color: </label>
+                        <input type="text" class="color-picker" name="bsc_btn_color[]" />
+                    </div>
+                    <div class="single-field">
+                        <label>Background: </label>
+                        <input type="text" class="color-picker" name="bsc_btn_background[]" />
+                    </div>
+                    <div class="single-field">
+                        <label>Border-color: </label>
+                        <input type="text" class="color-picker" name="bsc_btn_border-color[]" />
+                    </div>
+                </div>
+                <div class="bsc-btn-color-field">
+                    <div class="single-field">
+                        <label>Hover Color: </label>
+                        <input type="text" class="color-picker" name="bsc_btn_hover_color[]" />
+                    </div>
+                    <div class="single-field">
+                        <label>Hover Background: </label>
+                        <input type="text" class="color-picker" name="bsc_btn_hover_bg_color[]" />
+                    </div>
+                </div>
+                <div class="bsc-btn-color-field">
+                    <div class="single-field">
+                        <label>Font Size: <span>px</span> </label>
+                        <input type="number" name="bsc_btn_font_size[]" />
+                    </div>
+                    <div class="single-field">
+                        <label>Font Weight: </label>
+                        <select name="bsc_btn_font_weight[]">
+                            <?php 
+                                $bsc_btn_font_weights = ['normal', 'bold']; 
+                                foreach( $bsc_btn_font_weights as $weight ) {
+                                    printf( "<option value='%s'>%s</option>", $weight, $weight );
+                                } 
+                            ?>
+                        </select>
+                    </div>
+                    <div class="single-field">
+                        <label>Font Style: </label>
+                        <select name="bsc_btn_font-style[]">
+                            <?php 
+                                $bsc_btn_font_style = ['normal', 'italic']; 
+                                foreach( $bsc_btn_font_style as $style ) {
+                                    printf( "<option value='%s'>%s</option>", $style, $style );
+                                } 
+                            ?>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <?php
+        }
     }
 }
