@@ -15,9 +15,29 @@ class Admin {
         add_action( 'admin_enqueue_scripts', [$this, 'admin_enqueue_scripts'] );
         add_action( 'wp_ajax_bsc_add_button', [$this, 'bsc_add_button'] );
         add_action( 'wp_ajax_bsc_remove_button', [$this, 'bsc_remove_button'] );
+        add_action( 'admin_menu', [$this, 'setting_submenu'] );
 
         add_action( 'admin_init', [$this, 'duplicate_post_action'] );
         add_filter( 'post_row_actions', [$this, 'add_duplicate_link_before_trash'], 10, 2 );
+    }
+
+    /**
+     * Plugin Setting Page
+     */
+    public function setting_submenu() {
+
+        add_submenu_page(
+            'edit.php?post_type=bs_creator',
+            'Settings',
+            'Settings',
+            'manage_options',
+            'bsc_settings',
+            [$this, 'setting_callback']
+        );
+    }
+
+    public function setting_callback() {
+        echo "Hello";
     }
 
     /**
